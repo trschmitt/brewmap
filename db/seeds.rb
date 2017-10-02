@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-breweries = ActiveSupport::JSON.decode(File.read('db/seeds/mtbrewerydata.json'))
+file = File.read('db/mtbrewerydata.json')
+data = JSON.parse(file)
 
-json.each do |a|
-  Brewery.create!(a['brewery'], without_protection: true)
+data.each_with_index do |e, index|
+  Brewery.create!(
+    name: e['brewery'], without_protection: true
+  )
 end
