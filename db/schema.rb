@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 20171002155435) do
     t.float "longitude"
     t.string "website"
     t.string "yearOpened"
-    t.string "icon"
+    t.string "address"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

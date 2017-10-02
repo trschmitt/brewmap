@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "maps#index"
+  root to: "breweries#index"
 
   resources :maps
   resources :breweries

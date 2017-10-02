@@ -9,8 +9,15 @@
 file = File.read('db/mtbrewerydata.json')
 data = JSON.parse(file)
 
-data.each_with_index do |e, index|
-  Brewery.create!(
-    name: e['brewery'], without_protection: true
-  )
+data.each do |l|
+  breweries = Brewery.create([
+    {name: l['brewery']['name']},
+    {description: l['brewery']['description']},
+    {latitude: l['latitude']},
+    {longitude: l['longitude']},
+    {website: l['brewery']['website']},
+    {yearOpened: l['brewery']['established']},
+    {address: l['streetAddress']},
+    {city: l['locality']}
+  ])
 end
