@@ -3,11 +3,23 @@
   <head>
     <title>Brewmap</title>
     <%= csrf_meta_tags %>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
-    <%= javascript_include_tag 'application' %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_ACCESS_TOKEN"] %>&callback=initMap"
+    async defer></script>
+    
+    <%= javascript_include_tag 'application', defer: true %>
   </head>
 
   <body>
