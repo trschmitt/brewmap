@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar_header">
+            <span><%= link_to "OWNER LOGIN", new_session_path%></span>
+            <span><%= link_to "OWNER SIGN UP", new_owners_path %></span>
+            <span><%= link_to "BREWERIES", breweries_path %></span>
+          <!-- <form class="navbar-form" action="/results" method="get">
+            <input type=”text” name=q id=”search” placeholder="Search Questions">
+            <button class="btn btn-default" type="submit">Go</button>
+          </form> -->
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

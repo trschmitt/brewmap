@@ -1,0 +1,15 @@
+<h1>Owner Login</h1>
+<body class="login">
+  <% if current_owner %>
+  You are now logged in as: <%= current_owner.email %>.
+  <%= link_to "Log Out", session_path, method: :delete %>
+  <% else %>
+  You are not logged in. Sign up here!! <%= link_to "Sign Up", new_owners_path %>.
+  <% end %>
+
+  <%= form_tag session_path do %>
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+  <% end %>
+</body>

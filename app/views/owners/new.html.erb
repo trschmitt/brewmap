@@ -1,2 +1,19 @@
-<h1>Owners#new</h1>
-<p>Find me in app/views/owners/new.html.erb</p>
+<p id="notice"><%= notice %></p>
+<h1>Sign Up HERE!!!</h1>
+
+<% if @owner.errors.any? %>
+  <h2>please correct the problems below before continueing...</h2>
+  <ul>
+    <% @owner.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%=  form_for :owner, url: owner_path do |f| %>
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Sign me up captain" %>
+<% end %>
