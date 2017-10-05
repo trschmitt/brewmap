@@ -18,6 +18,9 @@ data.each do |l|
     website: l['brewery']['website'],
     yearOpened: l['brewery']['established'],
     address: l['streetAddress'],
-    city: l['locality']
+    city: l['locality'],
+    days_and_hours: l['hoursOfOperation'],
+    phone: l['phone'],
+    location_type: l['locationTypeDisplay']
   })
 end

@@ -1,10 +1,11 @@
 <!-- <div id="map"></div> -->
-<h1>BREWmaps</h1>
+<h1>Montana Brews</h1>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Website</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,8 @@
       <tr>
         <td><%= brewery.name %></td>
         <td><%= brewery.description %></td>
+        <td><%= brewery.website %></td>
+        <td><%= link_to 'Show', brewery, class: "btn btn-primary"%></td>
       </tr>
     <% end %>
   </tbody>
