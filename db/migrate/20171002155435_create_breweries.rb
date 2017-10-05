@@ -6,7 +6,7 @@ class CreateBreweries < ActiveRecord::Migration[5.1]
       t.float :latitude
       t.float :longitude
       t.string :website
-      t.string :yearOpened
+      t.string :year_opened
       t.string :address
       t.string :city
 

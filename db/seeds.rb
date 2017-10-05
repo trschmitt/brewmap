@@ -16,11 +16,12 @@ data.each do |l|
     latitude: l['latitude'],
     longitude: l['longitude'],
     website: l['brewery']['website'],
-    yearOpened: l['brewery']['established'],
+    year_opened: l['brewery']['established'],
     address: l['streetAddress'],
     city: l['locality'],
     days_and_hours: l['hoursOfOperation'],
     phone: l['phone'],
-    location_type: l['locationTypeDisplay']
+    location_type: l['locationTypeDisplay'],
+    state: l['region']
   })
 end

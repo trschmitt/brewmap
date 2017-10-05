@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Website</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +12,8 @@
       <tr>
         <td><%= brewery.name %></td>
         <td><%= brewery.description %></td>
-        <td><%= brewery.website %></td>
+        <td><%= link_to 'Website',
+        brewery.website, class: "btn btn-primary"%></td>
         <td><%= link_to 'Show', brewery, class: "btn btn-primary"%></td>
       </tr>
     <% end %>

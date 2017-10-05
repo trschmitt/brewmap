@@ -1,0 +1,20 @@
+<p id="notice"> <%= notice %> </p>
+
+<%= link_to 'Breweries', breweries_path, class: "btn btn-primary" %>
+
+<body class="question_show">
+  <h1><%= @brewery.name %></h1>
+  <h6><%= link_to 'Brewery Website', @brewery.website, class: "btn btn-info" %></h6>
+
+  <h2>Address: <%= @brewery.address %> | <%= @brewery.city %></h2>
+
+
+  <h3>Established: <%= @brewery.year_opened %></h3>
+
+  <h4>Operating Hours: <%= @brewery.days_and_hours %></h4>
+
+  <h4>Type: <%= @brewery.location_type %></h4>
+
+
+  <p><%= @brewery.description %></p>
+</body>

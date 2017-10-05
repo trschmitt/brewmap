@@ -1,0 +1,62 @@
+<%= form_with(model: brewery, local: true, class: 'brewery-form') do |form| %>
+  <% if brewery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(brewery.errors.count, "error") %> prohibited this brewery from being saved:</h2>
+
+      <ul>
+      <% brewery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :brewery_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :body, id: :brewery_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website, id: :brewery_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_opened %>
+    <%= form.text_field :year_opened, id: :brewery_year_opened %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :brewery_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :brewery_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :days_and_hours %>
+    <%= form.text_field :days_and_hours, id: :brewery_days_and_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :brewery_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_type %>
+    <%= form.text_field :location_type, id: :brewery_location_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
